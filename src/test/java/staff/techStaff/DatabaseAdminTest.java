@@ -10,7 +10,7 @@ public class DatabaseAdminTest {
     private DatabaseAdmin databaseAdmin;
 
     @Before
-    public void before(){
+    public void before() throws Exception{
         this.databaseAdmin = new DatabaseAdmin("Quentin", "C098987656",18000.00);
     }
     @Test

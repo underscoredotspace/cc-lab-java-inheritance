@@ -11,7 +11,7 @@ public class ManagerTest {
 
 
     @Before
-    public void before(){
+    public void before() throws Exception{
 
         this.manager = new Manager ("Jimmy", "JW3344567",
             30000.00, "accounts");

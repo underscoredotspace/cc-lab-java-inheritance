@@ -11,7 +11,7 @@ public class DeveloperTest {
 
 
     @Before
-    public void before(){
+    public void before() throws Exception{
         this.developer = new Developer("Annie", "CM1234567",24000.00);
     }
     @Test

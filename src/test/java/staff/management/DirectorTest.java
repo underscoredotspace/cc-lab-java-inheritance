@@ -1,7 +1,9 @@
 package staff.management;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
@@ -9,13 +11,13 @@ public class DirectorTest {
 
     private Director director;
 
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
     @Before
-
-    public void before(){
-
+    public void before() throws Exception{
         director = new Director ("Helga", "3939393", 60000.00,
             "accounts", 1000000.00);
-
     }
 
     @Test
@@ -26,6 +28,29 @@ public class DirectorTest {
     @Test
     public void canGetName() {
         assertEquals("Helga", director.getName());
+    }
+
+    @Test
+    public void canChangeName() {
+        try {
+            director.setName("Olga");
+        } catch(Exception e) {
+
+        }
+        assertEquals("Olga", director.getName());
+    }
+
+    @Test
+    public void canNotChangeNameToNull() throws Exception {
+        thrown.expect(Exception.class);
+        director.setName(null);
+
+    }
+
+    @Test
+    public void canNotChangeNameToEmptyString() throws Exception {
+        thrown.expect(Exception.class);
+        director.setName("");
     }
 
     @Test
@@ -52,7 +77,7 @@ public class DirectorTest {
 
     @Test
     public void canGetPayBonus() {
-        assertEquals(600.00, director.payBonus(), 0.01);
+        assertEquals(1200.00, director.payBonus(), 0.01);
     }
 
     @Test
