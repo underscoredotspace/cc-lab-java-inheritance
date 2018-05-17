@@ -42,4 +42,9 @@ public class ManagerTest {
         assertEquals(300.00, manager.payBonus(), 0.01);
     }
 
+    @Test
+    public void canGetDeptName() {
+        assertEquals("accounts", manager.getDeptName());
+    }
+
 }
