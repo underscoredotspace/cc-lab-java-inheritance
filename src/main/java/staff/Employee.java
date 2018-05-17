@@ -24,6 +24,10 @@ public abstract class Employee {
     }
 
     public void raiseSalary(double raiseAmount) {
+        if (raiseAmount < 0) {
+            return;
+        }
+
         this.salary += raiseAmount;
     }
 
